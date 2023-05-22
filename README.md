@@ -1,16 +1,63 @@
-# gamecomusic
+# Gameco Music
 
-A new Flutter project.
+Gameco Music is a music player app developed as part of a technical test for the position of Mobile Developer at GameCo. The app allows users to play and manage their music collection with ease.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **Sleek and Intuitive Interface**: Gameco Music provides a user-friendly interface that allows users to navigate through their music library effortlessly.
 
-A few resources to get you started if this is your first Flutter project:
+- **Music Playback**: Enjoy your favorite songs with high-quality audio playback. Gameco Music supports various audio file formats to ensure compatibility with a wide range of music files.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Search Functionality**: Quickly find your desired songs, albums, or artists using the powerful search feature.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Shuffle and Repeat**: Enhance your music listening experience by shuffling your playlists or enabling repeat mode.
+
+## Tech Stack
+
+Gameco Music is built using the following technologies:
+
+- **Flutter (3.10.1)**: An open-source UI software development kit developed by Google for creating beautiful and native applications for mobile, web, and desktop from a single codebase.
+
+- **Dart (3.0.1)**: The programming language used with Flutter, known for its simplicity, speed, and efficiency.
+
+## Dependencies
+
+Gameco Music relies on the following dependencies:
+
+- **just_audio**: A Flutter audio plugin that provides a simple, high-level API for playing audio in various formats.
+
+- **audio_service**: A Flutter plugin that provides a background audio task manager for playing audio in the background.
+
+- **flutter_bloc**: A state management library for Flutter that helps manage the state of the application using the BLoC (Business Logic Component) pattern.
+
+- **dio**: A powerful Dart HTTP client library for making network requests.
+
+## Installation
+
+To run Gameco Music locally on your machine, follow these steps:
+
+1. Clone the repository:
+
+   ```
+   git clone https://github.com/zae1403/gameco-music.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```
+   cd gamecomusic
+   ```
+
+3. Install the dependencies using Flutter:
+
+   ```
+   flutter pub get
+   ```
+
+4. Run the app on your preferred device (emulator/simulator or physical device):
+
+   ```
+   flutter run
+   ```
+
+Please ensure that you have Flutter 3.10.1 and Dart 3.0.1 installed on your system before proceeding with the above steps.
