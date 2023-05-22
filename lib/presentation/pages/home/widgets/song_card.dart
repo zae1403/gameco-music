@@ -1,6 +1,9 @@
+import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../domain/music/entities/song.dart';
+import '../../../services/audio_handler.dart';
 
 class SongCard extends StatelessWidget {
   const SongCard({
@@ -23,7 +26,6 @@ class SongCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      // selected: state.video == item,
       leading: SizedBox(
         height: 56,
         width: 56,
@@ -41,21 +43,27 @@ class SongCard extends StatelessWidget {
                   : child,
         ),
       ),
-      // leading: const Icon(Icons.play_circle_fill_rounded),
       title: Text(item.trackName),
       subtitle: Text(item.artistName),
       trailing: Text(timeFormatter(item.trackTimeMillis)),
-      // onTap: state.video != item
-      //     ? () {
-      //         Scrollable.ensureVisible(context,
-      //             duration: const Duration(milliseconds: 500));
+      onTap: () {
+        Scrollable.ensureVisible(context,
+            duration: const Duration(milliseconds: 500));
 
-      //         state.controller?.pause();
-      //         context
-      //             .read<VideoPlayerBloc>()
-      //             .add(VideoPlayerEvent.played(item));
-      //       }
-      //     : null,
+        final mediaItem = MediaItem(
+          id: item.previewUrl ?? '',
+          title: item.trackName,
+          album: item.collectionName,
+          artist: item.artistName,
+          duration: Duration(milliseconds: item.trackTimeMillis ?? 0),
+          artUri: item.artworkUrl100 != null
+              ? Uri.parse(item.artworkUrl100!)
+              : null,
+        );
+        audioHandler.updateQueue([mediaItem]);
+        audioHandler.play();
+        context.go('/audio-player');
+      },
     );
   }
 }

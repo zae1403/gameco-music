@@ -7,17 +7,21 @@ import 'data/music/repositories/music_repository.dart';
 import 'domain/music/repositories/i_music_repository.dart';
 import 'domain/music/usecases/get_songs.dart';
 import 'presentation/blocs/music/music_bloc.dart';
+import 'presentation/services/audio_handler.dart';
 
 final sl = GetIt.instance;
 
-void initServices() {
-  _initExternalDependencies();
+Future<void> initServices() async {
+  await _initExternalDependencies();
   _initVideoFeatures();
 }
 
-void _initExternalDependencies() {
+Future<void> _initExternalDependencies() async {
   ///Http Client with Dio
   sl.registerLazySingleton<Dio>(() => DioClient.instance);
+
+  ///Audio Handler
+  sl.registerSingleton<AudioPlayerHandler>(await initAudioService());
 }
 
 void _initVideoFeatures() {

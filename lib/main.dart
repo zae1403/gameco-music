@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'injector.dart';
 import 'presentation/blocs/core/bloc_observer.dart';
 import 'presentation/blocs/music/music_bloc.dart';
-
 import 'presentation/routes/router.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  initServices();
+
+  await initServices();
 
   Bloc.observer = SimpleBlocObserver();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then(

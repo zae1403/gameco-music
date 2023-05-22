@@ -1,19 +1,41 @@
+import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../blocs/music/music_bloc.dart';
+import '../../services/audio_handler.dart';
 import '../../widgets/error_view.dart';
 import '../../widgets/hide_focus.dart';
+import 'widgets/floating_audio_player.dart';
 import 'widgets/song_card.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+    // (audioHandler as AudioPlayerHandlerImpl).listenForDurationChanges();
+    // sl<PageManager>().init();
+  }
+
+  @override
+  void dispose() {
+    audioHandler.customAction('dispose');
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return HideFocus(
       child: Scaffold(
         appBar: AppBar(title: const Text('Gameco Music')),
+        bottomNavigationBar: const FloatingAudioPlayer(),
         body: Column(
           children: [
             const Padding(
@@ -22,7 +44,26 @@ class HomePage extends StatelessWidget {
             ),
             Expanded(
               child: BlocConsumer<MusicBloc, MusicState>(
-                listener: (context, state) {},
+                listener: (context, state) {
+                  state.responseFailureOrSuccess.fold(
+                    () => null,
+                    (either) => either.fold(
+                      (failure) => null,
+                      (songs) {
+                        if (songs.isNotEmpty) {
+                          songs.map(
+                            (e) => MediaItem(
+                              id: e.previewUrl ?? '',
+                              title: e.trackName,
+                              duration: Duration(
+                                  milliseconds: e.trackTimeMillis ?? 0),
+                            ),
+                          );
+                        }
+                      },
+                    ),
+                  );
+                },
                 builder: (context, state) {
                   if (state.isLoading) {
                     return const Center(
