@@ -2,6 +2,15 @@
 
 Gameco Music is a music player app developed as part of a technical test for the position of Mobile Developer at PT Inovasi Dunia Gim. The app allows users to play and manage their music collection with ease.
 
+
+## Screenshoots
+![Simulator Screenshot - iPhone 14 Pro Max - 2023-05-22 at 23 24 12](https://github.com/zae1403/gameco-music/assets/25485693/c6798e6a-c745-48ae-b3b1-1abc5701245d)
+
+![Simulator Screenshot - iPhone 14 Pro Max - 2023-05-22 at 23 24 35](https://github.com/zae1403/gameco-music/assets/25485693/d71f444e-9dd9-4b23-a510-511e61baacfa)
+
+![Simulator Screenshot - iPhone 14 Pro Max - 2023-05-22 at 23 24 19](https://github.com/zae1403/gameco-music/assets/25485693/83da2b85-c9b1-49cd-a2db-30b64ea1b39f)
+
+
 ## Features
 
 - **Sleek and Intuitive Interface**: Gameco Music provides a user-friendly interface that allows users to navigate through their music library effortlessly.
