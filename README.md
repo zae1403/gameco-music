@@ -1,6 +1,6 @@
 # Gameco Music
 
-Gameco Music is a music player app developed as part of a technical test for the position of Mobile Developer at GameCo. The app allows users to play and manage their music collection with ease.
+Gameco Music is a music player app developed as part of a technical test for the position of Mobile Developer at PT Inovasi Dunia Gim. The app allows users to play and manage their music collection with ease.
 
 ## Features
 
