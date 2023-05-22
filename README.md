@@ -4,12 +4,11 @@ Gameco Music is a music player app developed as part of a technical test for the
 
 
 ## Screenshoots
-![Simulator Screenshot - iPhone 14 Pro Max - 2023-05-22 at 23 24 12](https://github.com/zae1403/gameco-music/assets/25485693/c6798e6a-c745-48ae-b3b1-1abc5701245d)
-
-![Simulator Screenshot - iPhone 14 Pro Max - 2023-05-22 at 23 24 35](https://github.com/zae1403/gameco-music/assets/25485693/d71f444e-9dd9-4b23-a510-511e61baacfa)
-
-![Simulator Screenshot - iPhone 14 Pro Max - 2023-05-22 at 23 24 19](https://github.com/zae1403/gameco-music/assets/25485693/83da2b85-c9b1-49cd-a2db-30b64ea1b39f)
-
+<p align="center">
+  <img width="200" src="https://github.com/zae1403/gameco-music/assets/25485693/c6798e6a-c745-48ae-b3b1-1abc5701245d">
+    <img width="200" src="https://github.com/zae1403/gameco-music/assets/25485693/d71f444e-9dd9-4b23-a510-511e61baacfa">
+    <img width="200" src="https://github.com/zae1403/gameco-music/assets/25485693/83da2b85-c9b1-49cd-a2db-30b64ea1b39f">
+</p>
 
 ## Features
 
